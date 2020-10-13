@@ -1,0 +1,200 @@
+/*
+ * Plain widget theme, only specific widgets are themed
+ */
+
+/*
+ * General panel settings
+ */
+
+LXQtPanel #BackgroundWidget{
+    background: palette(window);
+}
+Plugin,
+LXQtPanelPlugin {
+    padding: 0;
+    spacing: 20px;
+    qproperty-moveMarkerColor: palette(highlight);
+}
+
+
+Plugin > QToolButton,
+Plugin > QWidget > QToolButton,
+Plugin > QWidget > QToolButton > QWidget > QToolButton,
+LXQtPanelPlugin > QToolButton,
+#TaskBar QToolButton,
+#VolumePlugin QToolButton,
+TrayIcon {
+    border: 2px solid palette(window);
+    border-radius: 2px;
+    margin: 0px;
+    padding: 1px 4px; 
+    qproperty-iconSize: 24px;
+    color: palette(text);
+}
+
+Plugin > QToolButton:hover,
+Plugin > QWidget > QToolButton:hover,
+Plugin > QWidget > QToolButton > QWidget > QToolButton:hover,
+LXQtPanelPlugin > QToolButton:hover,
+#TaskBar QToolButton:hover,
+#VolumePlugin QToolButton:hover,
+TrayIcon:hover {
+    background-color: palette(light);
+}
+#WorldClockContent {
+    color: palette(text);
+}
+Plugin > QToolButton:pressed,
+Plugin > QWidget > QToolButton:pressed,
+LXQtPanelPlugin > QToolButton:pressed{
+    padding: 2px 4px 0px;
+}
+#TaskBar QToolButton{
+    border-radius: 0px;
+    border: 2px solid palette(mid);
+    padding: 0px;
+    margin: 1px 1px;
+    background: palette(mid);
+}
+#TaskBar QToolButton:pressed {
+    padding: 2px 0px 0px 0px;
+    background: palette(light);
+}
+#TaskBar QToolButton:on{
+    border-color: palette(dark);
+    background: palette(dark);
+    text-decoration: underline;
+}
+#TaskBar QToolButton:hover{
+    border-color: palette(light);
+    background: palette(light);
+}
+#TaskBar QToolButton:on:hover{
+    border-color: palette(light);
+    background: palette(base);
+    text-decoration: underline;
+}
+
+#MainMenu {
+    margin: 0px;
+    padding: 0px 6px;
+    border-radius: 4px;
+    qproperty-icon: url(mainmenu.svg);
+    color: palette(window-text);
+    background-color: palette(window);
+    border: none;
+    
+}
+#MainMenu:hover {
+    background-color: palette(light);
+}
+#MainMenu:pressed {
+    padding: 8px;
+}
+
+
+#MainMenu  QMenu {
+    background-color: palette(mid);
+    border: 1px solid palette(light);
+    font-size: 12px;
+}
+
+#MainMenu  QMenu::icon {
+    background-color: transparent;
+    border: 10px solid transparent;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+}
+
+
+
+#MainMenu > QMenu::item {
+    color: palette(text);
+    padding: 0.5em 4em 0.5em 2em;
+    border-radius: 0.2em;
+}
+
+#MainMenu QMenu > QMenu::item {
+    color: palette(text);
+    padding: 0.5em 2em;
+    border-radius: 0.2em;
+}
+
+#MainMenu QMenu::item:selected {
+    background: palette(light);
+}
+
+#MainMenu ActionView {
+    background-color: palette(mid);
+    border: none;
+}
+
+#MainMenu ActionView::item {
+    padding: 2px 0;
+}
+
+#MainMenu QLineEdit {
+    background: palette(window);
+    border: none;
+    color: palette(text);
+    margin: 3px;
+    padding: 3px;
+}
+
+#MainMenu QScrollBar::handle {
+    background-color: palette(highlighted-text);
+    color: palette(highlighted-text);
+}
+/*
+ * TaskBar
+ */
+
+#TaskBar QToolButton[urgent="true"] {
+    color: palette(highlighted-text);
+    background: palette(highlight);
+}
+
+/*
+ * Desktopswitch
+ */
+#DesktopSwitch QToolButton[urgent="true"] {
+    color: palette(highlighted-text);
+    background: palette(highlight);
+}
+
+/*
+ * Spacer
+ */
+
+#Spacer {
+    background-position: center center;
+}
+
+#Spacer[type="lined"] {
+    background-image: url(/spacer-plugin/spacer-line.svg);
+}
+
+#Spacer[type="dotted"] {
+    background-image: url(/spacer-plugin/spacer-dots.svg);
+ }
+
+#Spacer[orientation="horizontal"] {
+    background-repeat: repeat-y;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+#Spacer[orientation="vertical"] {
+    background-repeat: repeat-x;
+    margin-right: 2px;
+    margin-left: 2px;
+}
+
+/*
+ * Main menu plugin
+ */
+
+#MainMenu {
+    qproperty-icon: url(mainmenu.svg);
+}
