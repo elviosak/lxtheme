@@ -49,36 +49,85 @@ Plugin > QWidget > QToolButton:pressed,
 LXQtPanelPlugin > QToolButton:pressed{
     padding: 2px 4px 0px;
 }
-#TaskBar QToolButton{
+
+
+
+/*
+ * TaskBar
+ */
+
+#TaskBar LXQtTaskButton{
     border-radius: 0px;
-    border: 2px solid palette(mid);
-    padding: 0px;
+    border-width: 0px;
+    padding: 0px 2px;
     margin: 1px 1px;
     background: palette(mid);
 }
-#TaskBar QToolButton:pressed {
-    padding: 2px 0px 0px 0px;
+#TaskBar LXQtTaskButton::text{
+    color: red;
+    padding: 6px;
+}
+#TaskBar LXQtTaskButton:pressed {
+    padding: 2px 2px 0px;
     background: palette(light);
 }
-#TaskBar QToolButton:on{
-    border-color: palette(dark);
+#TaskBar LXQtTaskButton:on{
     background: palette(dark);
     text-decoration: underline;
 }
-#TaskBar QToolButton:hover{
-    border-color: palette(light);
+#TaskBar LXQtTaskButton:hover{
     background: palette(light);
 }
-#TaskBar QToolButton:on:hover{
-    border-color: palette(light);
-    background: palette(base);
-    text-decoration: underline;
+
+#TaskBar QToolButton[urgent="true"] {
+    color: palette(highlighted-text);
+    background: palette(highlight);
 }
+
+/*
+ * Desktopswitch
+ */
+#DesktopSwitch QToolButton[urgent="true"] {
+    color: palette(highlighted-text);
+    background: palette(highlight);
+}
+
+/*
+ * Spacer
+ */
+
+#Spacer {
+    background-position: center center;
+}
+
+#Spacer[type="lined"] {
+    background-image: url(/spacer-plugin/spacer-line.svg);
+}
+
+#Spacer[type="dotted"] {
+    background-image: url(/spacer-plugin/spacer-dots.svg);
+ }
+
+#Spacer[orientation="horizontal"] {
+    background-repeat: repeat-y;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+#Spacer[orientation="vertical"] {
+    background-repeat: repeat-x;
+    margin-right: 2px;
+    margin-left: 2px;
+}
+
+/*
+ * Main menu plugin
+ */
 
 #MainMenu {
     margin: 0px;
-    padding: 0px 6px;
-    border-radius: 4px;
+    padding: 0px 8px;
+    border-radius: 0px;
     qproperty-icon: url(mainmenu.svg);
     color: palette(window-text);
     background-color: palette(window);
@@ -145,56 +194,4 @@ LXQtPanelPlugin > QToolButton:pressed{
 #MainMenu QScrollBar::handle {
     background-color: palette(highlighted-text);
     color: palette(highlighted-text);
-}
-/*
- * TaskBar
- */
-
-#TaskBar QToolButton[urgent="true"] {
-    color: palette(highlighted-text);
-    background: palette(highlight);
-}
-
-/*
- * Desktopswitch
- */
-#DesktopSwitch QToolButton[urgent="true"] {
-    color: palette(highlighted-text);
-    background: palette(highlight);
-}
-
-/*
- * Spacer
- */
-
-#Spacer {
-    background-position: center center;
-}
-
-#Spacer[type="lined"] {
-    background-image: url(/spacer-plugin/spacer-line.svg);
-}
-
-#Spacer[type="dotted"] {
-    background-image: url(/spacer-plugin/spacer-dots.svg);
- }
-
-#Spacer[orientation="horizontal"] {
-    background-repeat: repeat-y;
-    margin-top: 2px;
-    margin-bottom: 2px;
-}
-
-#Spacer[orientation="vertical"] {
-    background-repeat: repeat-x;
-    margin-right: 2px;
-    margin-left: 2px;
-}
-
-/*
- * Main menu plugin
- */
-
-#MainMenu {
-    qproperty-icon: url(mainmenu.svg);
 }
