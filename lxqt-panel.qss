@@ -24,12 +24,15 @@ LXQtPanelPlugin > QToolButton,
 #TaskBar QToolButton,
 #VolumePlugin QToolButton,
 TrayIcon {
-    border: 2px solid palette(window);
-    border-radius: 2px;
-    margin: 0px;
-    padding: 1px 4px; 
+    border-width: 0px;
+    border-radius: 0px;
+    margin: 1px 1px;
+    padding: 0px 1px; 
     qproperty-iconSize: 24px;
     color: palette(text);
+}
+#LXQtCpuLoad {
+	qproperty-fontColor: palette(text);
 }
 
 Plugin > QToolButton:hover,
@@ -39,7 +42,7 @@ LXQtPanelPlugin > QToolButton:hover,
 #TaskBar QToolButton:hover,
 #VolumePlugin QToolButton:hover,
 TrayIcon:hover {
-    background-color: palette(light);
+    background-color: palette(highlight);
 }
 #WorldClockContent {
     color: palette(text);
@@ -47,7 +50,7 @@ TrayIcon:hover {
 Plugin > QToolButton:pressed,
 Plugin > QWidget > QToolButton:pressed,
 LXQtPanelPlugin > QToolButton:pressed{
-    padding: 2px 4px 0px;
+    padding: 2px 2px 0px;
 }
 
 
@@ -58,13 +61,13 @@ LXQtPanelPlugin > QToolButton:pressed{
 #TaskBar LXQtTaskButton{
     border-radius: 0px;
     border-width: 0px;
-    padding: 0px 2px;
+    padding: 0px 1px;
     margin: 1px 1px;
-    background: palette(mid);
+    background: palette(button);
+    color: palette(button-text);
 }
 #TaskBar LXQtTaskButton::text{
-    color: red;
-    padding: 6px;
+    padding: 6px 3px;
 }
 #TaskBar LXQtTaskButton:pressed {
     padding: 2px 2px 0px;
@@ -75,7 +78,8 @@ LXQtPanelPlugin > QToolButton:pressed{
     text-decoration: underline;
 }
 #TaskBar LXQtTaskButton:hover{
-    background: palette(light);
+    background: palette(highlight);
+    color: palette(highlighted-text);
 }
 
 #TaskBar QToolButton[urgent="true"] {
@@ -173,21 +177,24 @@ LXQtPanelPlugin > QToolButton:pressed{
     background: palette(light);
 }
 
-#MainMenu ActionView {
-    background-color: palette(mid);
+#MainMenu QListView {
+    background-color: palette(base);
     border: none;
 }
 
-#MainMenu ActionView::item {
+#MainMenu QListView::item {
     padding: 2px 0;
 }
-
+#MainMenu QToolButton {
+    border: none;
+}
 #MainMenu QLineEdit {
-    background: palette(window);
+    background: palette(base);
     border: none;
     color: palette(text);
-    margin: 3px;
+/*    margin: 3px;
     padding: 3px;
+*/
 }
 
 #MainMenu QScrollBar::handle {
